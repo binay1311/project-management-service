@@ -1,0 +1,17 @@
+1. I have first created a docker container using
+docker run -d --rm --name project -e POSTGRES_PASSWORD=admin -e POSTGRES_USER=postgres -p 5432:5432 postgres:12
+
+2. After the docker container is created, create a server in pg-admin
+name it project-db
+Host name/address : localhost
+Port : 5432
+username : postgres
+password : admin
+
+3. After server creation, create a database in project-db using
+create database projectmanagementtool;
+
+4. Configure the database in application.properties in the springboot application
+spring.datasource.url=jdbc:postgresql://localhost:5432/projectmanagementtool
+
+5. Finally run the springboot application
